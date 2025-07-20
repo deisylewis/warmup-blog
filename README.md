@@ -1,12 +1,14 @@
 # CSV Download and OpenAI Processing Application
 
-This application automatically downloads CSV files from RB2B and HeyReach APIs, then processes them using OpenAI for analysis and insights.
+This application automatically downloads CSV files from RB2B (Website visitors), HeyReach (LinkedIn campaigns), and Instantly (Email campaigns) APIs, then processes them using OpenAI for analysis and prospect overlap detection.
 
 ## Features
 
-- **Automated CSV Downloads**: Download CSV exports from RB2B and HeyReach APIs
+- **Automated CSV Downloads**: Download CSV exports from RB2B (Website visitors), HeyReach (LinkedIn campaigns), and Instantly (Email campaigns) APIs
+- **Prospect Overlap Analysis**: Identify prospects that appear across multiple marketing channels with detailed overlap reporting
 - **OpenAI Processing**: Analyze CSV data using GPT-4 for insights, summaries, and custom analysis
-- **Multiple Analysis Types**: Built-in analysis modes for insights, summaries, comparisons, and custom prompts
+- **Multiple Analysis Types**: Built-in analysis modes for insights, summaries, comparisons, overlaps, and custom prompts
+- **Source Labeling**: Automatically labels data sources (LinkedIn campaigns, Website visitors, Email campaigns)
 - **Scheduling**: Automated execution with flexible scheduling options
 - **Comprehensive Logging**: Full logging of all operations with timestamps
 - **Error Handling**: Robust error handling and validation
@@ -30,6 +32,9 @@ This application automatically downloads CSV files from RB2B and HeyReach APIs, 
    # Download CSVs and analyze with default insights
    python main.py
    
+   # Analyze prospect overlaps across all sources
+   python main.py --analysis-type overlaps
+   
    # Download from specific source only
    python main.py --sources rb2b
    
@@ -52,6 +57,8 @@ RB2B_API_KEY=your_rb2b_api_key_here
 RB2B_API_URL=https://api.rb2b.com/v1/exports
 HEYREACH_API_KEY=your_heyreach_api_key_here
 HEYREACH_API_URL=https://api.heyreach.io/v1/exports
+INSTANTLY_API_KEY=your_instantly_api_key_here
+INSTANTLY_API_URL=https://api.instantly.ai/v1/exports
 
 # Optional settings
 DOWNLOAD_DIR=./downloads
@@ -94,15 +101,39 @@ python main.py --analysis-type custom --prompt "Find the top 10 leads by engagem
 ### Source Selection
 
 ```bash
-# Download from both sources (default)
+# Download from all sources (default)
+python main.py --sources rb2b heyreach instantly
+
+# Download from specific sources
 python main.py --sources rb2b heyreach
-
-# Download from RB2B only
 python main.py --sources rb2b
-
-# Download from HeyReach only
-python main.py --sources heyreach
+python main.py --sources instantly
 ```
+
+### Prospect Overlap Analysis
+
+**NEW FEATURE**: Analyze prospect overlaps across multiple marketing channels:
+
+```bash
+# Comprehensive overlap analysis across all sources
+python main.py --analysis-type overlaps
+
+# Use dedicated overlap analyzer with auto-download
+python overlap_analyzer.py --auto-download
+
+# Analyze existing CSV files
+python overlap_analyzer.py file1.csv file2.csv file3.csv
+
+# Analyze all CSVs in a directory
+python overlap_analyzer.py --directory ./my-csv-files
+```
+
+The overlap analysis will:
+- **Label each source**: HeyReach = LinkedIn campaigns, RB2B = Website visitors, Instantly = Email campaigns
+- **Find prospect overlaps** by email, company, LinkedIn profile, and other identifiers
+- **Generate detailed reports** showing which prospects appear across multiple channels
+- **Provide OpenAI-powered insights** on multi-channel prospect engagement
+- **Create actionable recommendations** for coordinated marketing campaigns
 
 ## Scheduling
 
@@ -127,9 +158,13 @@ python scheduler.py --schedule-type daily --run-now
 ```
 .
 ├── main.py              # Main application entry point
-├── csv_downloader.py    # CSV download functionality
+├── csv_downloader.py    # CSV download functionality (RB2B, HeyReach, Instantly)
 ├── openai_processor.py  # OpenAI processing functionality
+├── prospect_analyzer.py # Prospect overlap analysis engine
+├── overlap_analyzer.py  # Dedicated overlap analysis script
 ├── scheduler.py         # Automated scheduling
+├── test_installation.py # Installation testing suite
+├── setup.sh            # Easy installation script
 ├── requirements.txt     # Python dependencies
 ├── .env.example        # Environment variables template
 ├── downloads/          # Downloaded CSV files (created automatically)

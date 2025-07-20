@@ -11,12 +11,13 @@ import sys
 import argparse
 import logging
 from dotenv import load_dotenv
-from typing import List, Optional
+from typing import List, Optional, Dict
 import json
 from datetime import datetime
 
 from csv_downloader import CSVDownloader
 from openai_processor import OpenAIProcessor
+from prospect_analyzer import ProspectAnalyzer
 
 class CSVProcessingApp:
     """Main application class for CSV download and OpenAI processing"""
@@ -48,6 +49,8 @@ class CSVProcessingApp:
         self.rb2b_api_url = os.getenv('RB2B_API_URL')
         self.heyreach_api_key = os.getenv('HEYREACH_API_KEY')
         self.heyreach_api_url = os.getenv('HEYREACH_API_URL')
+        self.instantly_api_key = os.getenv('INSTANTLY_API_KEY')
+        self.instantly_api_url = os.getenv('INSTANTLY_API_URL')
         
         # Optional settings with defaults
         self.download_dir = os.getenv('DOWNLOAD_DIR', './downloads')
@@ -61,12 +64,16 @@ class CSVProcessingApp:
             sys.exit(1)
     
     def setup_components(self):
-        """Initialize downloader and processor components"""
+        """Initialize downloader, processor, and analyzer components"""
         self.downloader = CSVDownloader(download_dir=self.download_dir)
         self.processor = OpenAIProcessor(
             api_key=self.openai_api_key,
             model=self.openai_model,
             max_tokens=self.openai_max_tokens
+        )
+        self.analyzer = ProspectAnalyzer(
+            openai_processor=self.processor,
+            output_dir=self.processed_dir
         )
     
     def download_csvs(self, sources: List[str] = None) -> List[str]:
@@ -74,13 +81,13 @@ class CSVProcessingApp:
         Download CSV files from specified sources
         
         Args:
-            sources: List of sources to download from ('rb2b', 'heyreach', or both)
+            sources: List of sources to download from ('rb2b', 'heyreach', 'instantly', or all)
             
         Returns:
             List of downloaded file paths
         """
         if sources is None:
-            sources = ['rb2b', 'heyreach']
+            sources = ['rb2b', 'heyreach', 'instantly']
         
         downloaded_files = []
         
@@ -109,6 +116,19 @@ class CSVProcessingApp:
                 self.logger.info(f"HeyReach CSV downloaded successfully: {heyreach_file}")
             else:
                 self.logger.warning("HeyReach CSV download failed or validation failed")
+        
+        # Download from Instantly
+        if 'instantly' in sources and self.instantly_api_key and self.instantly_api_url:
+            self.logger.info("Starting Instantly CSV download...")
+            instantly_file = self.downloader.download_from_instantly(
+                api_key=self.instantly_api_key,
+                api_url=self.instantly_api_url
+            )
+            if instantly_file and self.downloader.validate_csv_file(instantly_file):
+                downloaded_files.append(instantly_file)
+                self.logger.info(f"Instantly CSV downloaded successfully: {instantly_file}")
+            else:
+                self.logger.warning("Instantly CSV download failed or validation failed")
         
         return downloaded_files
     
@@ -155,6 +175,35 @@ class CSVProcessingApp:
                     results.append(result)
         
         return results
+    
+    def analyze_prospect_overlaps(self, csv_files: List[str]) -> Dict:
+        """
+        Analyze prospect overlaps across CSV files from different sources
+        
+        Args:
+            csv_files: List of CSV file paths to analyze
+            
+        Returns:
+            Dictionary with overlap analysis results
+        """
+        self.logger.info("Starting prospect overlap analysis...")
+        
+        # Perform overlap analysis
+        overlap_results = self.analyzer.analyze_prospect_overlaps(csv_files)
+        
+        if 'error' not in overlap_results:
+            # Generate OpenAI-powered analysis report
+            self.logger.info("Generating OpenAI overlap analysis report...")
+            openai_report = self.analyzer.generate_openai_overlap_report(overlap_results)
+            
+            # Create CSV report of overlaps
+            csv_report_path = self.analyzer.create_overlap_csv_report(overlap_results)
+            
+            # Add additional results
+            overlap_results['openai_analysis'] = openai_report
+            overlap_results['csv_report_path'] = csv_report_path
+        
+        return overlap_results
     
     def run_full_pipeline(self, sources: List[str] = None, prompt: str = None, analysis_type: str = "insights") -> dict:
         """
@@ -228,14 +277,14 @@ def main():
     parser.add_argument(
         '--sources',
         nargs='+',
-        choices=['rb2b', 'heyreach'],
-        default=['rb2b', 'heyreach'],
-        help='Sources to download from (default: both)'
+        choices=['rb2b', 'heyreach', 'instantly'],
+        default=['rb2b', 'heyreach', 'instantly'],
+        help='Sources to download from (default: all)'
     )
     
     parser.add_argument(
         '--analysis-type',
-        choices=['insights', 'summary', 'custom', 'compare'],
+        choices=['insights', 'summary', 'custom', 'compare', 'overlaps'],
         default='insights',
         help='Type of OpenAI analysis to perform (default: insights)'
     )
@@ -289,16 +338,50 @@ def main():
                 print("Error: --prompt is required for custom analysis type")
                 sys.exit(1)
             
-            result = app.run_full_pipeline(args.sources, args.prompt, args.analysis_type)
-            
-            if result['success']:
-                print(f"Pipeline completed successfully!")
-                print(f"Downloaded files: {result['summary']['files_downloaded']}")
-                print(f"Processed files: {result['summary']['files_processed']}")
-                print(f"Duration: {result['pipeline_duration_seconds']:.2f} seconds")
+            if args.analysis_type == 'overlaps':
+                # Special handling for overlap analysis
+                print("Running prospect overlap analysis pipeline...")
+                downloaded_files = app.download_csvs(args.sources)
+                
+                if not downloaded_files:
+                    print("No CSV files were downloaded successfully")
+                    sys.exit(1)
+                
+                overlap_results = app.analyze_prospect_overlaps(downloaded_files)
+                
+                if 'error' in overlap_results:
+                    print(f"Overlap analysis failed: {overlap_results['error']}")
+                    sys.exit(1)
+                
+                # Display results
+                summary = overlap_results.get('summary', {})
+                print(f"\n🎯 Prospect Overlap Analysis Complete!")
+                print(f"📊 Sources analyzed: {', '.join(summary.get('sources_analyzed', []))}")
+                print(f"📈 Total records by source:")
+                for source, count in summary.get('total_records_by_source', {}).items():
+                    print(f"   - {source}: {count} records")
+                
+                print(f"🔍 Overlaps found by identifier type:")
+                for identifier_type, count in summary.get('total_overlaps_by_identifier', {}).items():
+                    print(f"   - {identifier_type}: {count} overlaps")
+                
+                if overlap_results.get('csv_report_path'):
+                    print(f"📋 CSV report saved: {overlap_results['csv_report_path']}")
+                
+                print(f"📁 Full analysis saved in: {app.processed_dir}")
+                
             else:
-                print(f"Pipeline failed: {result.get('error', 'Unknown error')}")
-                sys.exit(1)
+                # Regular pipeline
+                result = app.run_full_pipeline(args.sources, args.prompt, args.analysis_type)
+                
+                if result['success']:
+                    print(f"Pipeline completed successfully!")
+                    print(f"Downloaded files: {result['summary']['files_downloaded']}")
+                    print(f"Processed files: {result['summary']['files_processed']}")
+                    print(f"Duration: {result['pipeline_duration_seconds']:.2f} seconds")
+                else:
+                    print(f"Pipeline failed: {result.get('error', 'Unknown error')}")
+                    sys.exit(1)
     
     except KeyboardInterrupt:
         print("\nOperation cancelled by user")

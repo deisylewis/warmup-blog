@@ -36,7 +36,7 @@ class CSVDownloader:
     
     def download_from_rb2b(self, api_key: str, api_url: str, params: Optional[Dict] = None) -> Optional[str]:
         """
-        Download CSV from RB2B API
+        Download CSV from RB2B API (Website visitors)
         
         Args:
             api_key: RB2B API key
@@ -53,20 +53,20 @@ class CSVDownloader:
                 'Content-Type': 'application/json'
             }
             
-            self.logger.info("Requesting CSV export from RB2B...")
+            self.logger.info("Requesting CSV export from RB2B (Website visitors)...")
             response = requests.get(api_url, headers=headers, params=params or {})
             response.raise_for_status()
             
             # Generate filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"rb2b_export_{timestamp}.csv"
+            filename = f"rb2b_website_visitors_{timestamp}.csv"
             filepath = os.path.join(self.download_dir, filename)
             
             # Save CSV content
             with open(filepath, 'w', newline='', encoding='utf-8') as f:
                 f.write(response.text)
             
-            self.logger.info(f"Successfully downloaded RB2B CSV: {filepath}")
+            self.logger.info(f"Successfully downloaded RB2B website visitors CSV: {filepath}")
             return filepath
             
         except requests.exceptions.RequestException as e:
@@ -78,7 +78,7 @@ class CSVDownloader:
     
     def download_from_heyreach(self, api_key: str, api_url: str, params: Optional[Dict] = None) -> Optional[str]:
         """
-        Download CSV from HeyReach API
+        Download CSV from HeyReach API (LinkedIn campaigns)
         
         Args:
             api_key: HeyReach API key
@@ -95,20 +95,20 @@ class CSVDownloader:
                 'Content-Type': 'application/json'
             }
             
-            self.logger.info("Requesting CSV export from HeyReach...")
+            self.logger.info("Requesting CSV export from HeyReach (LinkedIn campaigns)...")
             response = requests.get(api_url, headers=headers, params=params or {})
             response.raise_for_status()
             
             # Generate filename with timestamp
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"heyreach_export_{timestamp}.csv"
+            filename = f"heyreach_linkedin_campaigns_{timestamp}.csv"
             filepath = os.path.join(self.download_dir, filename)
             
             # Save CSV content
             with open(filepath, 'w', newline='', encoding='utf-8') as f:
                 f.write(response.text)
             
-            self.logger.info(f"Successfully downloaded HeyReach CSV: {filepath}")
+            self.logger.info(f"Successfully downloaded HeyReach LinkedIn campaigns CSV: {filepath}")
             return filepath
             
         except requests.exceptions.RequestException as e:
@@ -116,6 +116,48 @@ class CSVDownloader:
             return None
         except Exception as e:
             self.logger.error(f"Unexpected error downloading from HeyReach: {e}")
+            return None
+    
+    def download_from_instantly(self, api_key: str, api_url: str, params: Optional[Dict] = None) -> Optional[str]:
+        """
+        Download CSV from Instantly API (Email campaigns)
+        
+        Args:
+            api_key: Instantly API key
+            api_url: Instantly API endpoint URL
+            params: Optional parameters for the API request
+            
+        Returns:
+            Path to downloaded file or None if failed
+        """
+        try:
+            headers = {
+                'Authorization': f'Bearer {api_key}',
+                'Accept': 'text/csv',
+                'Content-Type': 'application/json'
+            }
+            
+            self.logger.info("Requesting CSV export from Instantly (Email campaigns)...")
+            response = requests.get(api_url, headers=headers, params=params or {})
+            response.raise_for_status()
+            
+            # Generate filename with timestamp
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"instantly_email_campaigns_{timestamp}.csv"
+            filepath = os.path.join(self.download_dir, filename)
+            
+            # Save CSV content
+            with open(filepath, 'w', newline='', encoding='utf-8') as f:
+                f.write(response.text)
+            
+            self.logger.info(f"Successfully downloaded Instantly email campaigns CSV: {filepath}")
+            return filepath
+            
+        except requests.exceptions.RequestException as e:
+            self.logger.error(f"Error downloading from Instantly: {e}")
+            return None
+        except Exception as e:
+            self.logger.error(f"Unexpected error downloading from Instantly: {e}")
             return None
     
     def validate_csv_file(self, filepath: str) -> bool:
