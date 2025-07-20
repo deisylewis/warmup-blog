@@ -45,12 +45,6 @@ class CSVProcessingApp:
         
         # Required environment variables
         self.openai_api_key = os.getenv('OPENAI_API_KEY')
-        self.rb2b_api_key = os.getenv('RB2B_API_KEY')
-        self.rb2b_api_url = os.getenv('RB2B_API_URL')
-        self.heyreach_api_key = os.getenv('HEYREACH_API_KEY')
-        self.heyreach_api_url = os.getenv('HEYREACH_API_URL')
-        self.instantly_api_key = os.getenv('INSTANTLY_API_KEY')
-        self.instantly_api_url = os.getenv('INSTANTLY_API_URL')
         
         # Optional settings with defaults
         self.download_dir = os.getenv('DOWNLOAD_DIR', './downloads')
@@ -58,10 +52,48 @@ class CSVProcessingApp:
         self.openai_model = os.getenv('OPENAI_MODEL', 'gpt-4')
         self.openai_max_tokens = int(os.getenv('OPENAI_MAX_TOKENS', '2000'))
         
+        # Load client configurations
+        self.client_configs = self.load_client_configs()
+        
         # Validate required keys
         if not self.openai_api_key:
             self.logger.error("OPENAI_API_KEY is required")
             sys.exit(1)
+        
+        if not self.client_configs:
+            self.logger.warning("No client configurations found")
+    
+    def load_client_configs(self) -> List[Dict]:
+        """Load client configurations from environment variables"""
+        client_configs = []
+        
+        # Look for client configurations (CLIENT1_, CLIENT2_, etc.)
+        client_num = 1
+        while True:
+            client_prefix = f'CLIENT{client_num}_'
+            client_name = os.getenv(f'{client_prefix}NAME')
+            
+            if not client_name:
+                break  # No more clients
+            
+            client_config = {
+                'name': client_name,
+                'rb2b_api_key': os.getenv(f'{client_prefix}RB2B_API_KEY'),
+                'rb2b_api_url': os.getenv(f'{client_prefix}RB2B_API_URL'),
+                'heyreach_api_key': os.getenv(f'{client_prefix}HEYREACH_API_KEY'),
+                'heyreach_api_url': os.getenv(f'{client_prefix}HEYREACH_API_URL'),
+                'instantly_api_key': os.getenv(f'{client_prefix}INSTANTLY_API_KEY'),
+                'instantly_api_url': os.getenv(f'{client_prefix}INSTANTLY_API_URL'),
+            }
+            
+            # Only add client if at least one API is configured
+            if any([client_config['rb2b_api_key'], client_config['heyreach_api_key'], client_config['instantly_api_key']]):
+                client_configs.append(client_config)
+                self.logger.info(f"Loaded configuration for client: {client_name}")
+            
+            client_num += 1
+        
+        return client_configs
     
     def setup_components(self):
         """Initialize downloader, processor, and analyzer components"""
@@ -76,12 +108,13 @@ class CSVProcessingApp:
             output_dir=self.processed_dir
         )
     
-    def download_csvs(self, sources: List[str] = None) -> List[str]:
+    def download_csvs(self, sources: List[str] = None, days_back: int = 7) -> List[str]:
         """
-        Download CSV files from specified sources
+        Download CSV files from specified sources for all clients
         
         Args:
             sources: List of sources to download from ('rb2b', 'heyreach', 'instantly', or all)
+            days_back: Number of days to go back for data (default: 7)
             
         Returns:
             List of downloaded file paths
@@ -89,47 +122,16 @@ class CSVProcessingApp:
         if sources is None:
             sources = ['rb2b', 'heyreach', 'instantly']
         
-        downloaded_files = []
+        self.logger.info(f"Starting CSV downloads for {len(self.client_configs)} clients - last {days_back} days")
         
-        # Download from RB2B
-        if 'rb2b' in sources and self.rb2b_api_key and self.rb2b_api_url:
-            self.logger.info("Starting RB2B CSV download...")
-            rb2b_file = self.downloader.download_from_rb2b(
-                api_key=self.rb2b_api_key,
-                api_url=self.rb2b_api_url
-            )
-            if rb2b_file and self.downloader.validate_csv_file(rb2b_file):
-                downloaded_files.append(rb2b_file)
-                self.logger.info(f"RB2B CSV downloaded successfully: {rb2b_file}")
-            else:
-                self.logger.warning("RB2B CSV download failed or validation failed")
+        # Download from all clients using the new method
+        downloaded_files = self.downloader.download_all_clients(
+            client_configs=self.client_configs,
+            sources=sources,
+            days_back=days_back
+        )
         
-        # Download from HeyReach
-        if 'heyreach' in sources and self.heyreach_api_key and self.heyreach_api_url:
-            self.logger.info("Starting HeyReach CSV download...")
-            heyreach_file = self.downloader.download_from_heyreach(
-                api_key=self.heyreach_api_key,
-                api_url=self.heyreach_api_url
-            )
-            if heyreach_file and self.downloader.validate_csv_file(heyreach_file):
-                downloaded_files.append(heyreach_file)
-                self.logger.info(f"HeyReach CSV downloaded successfully: {heyreach_file}")
-            else:
-                self.logger.warning("HeyReach CSV download failed or validation failed")
-        
-        # Download from Instantly
-        if 'instantly' in sources and self.instantly_api_key and self.instantly_api_url:
-            self.logger.info("Starting Instantly CSV download...")
-            instantly_file = self.downloader.download_from_instantly(
-                api_key=self.instantly_api_key,
-                api_url=self.instantly_api_url
-            )
-            if instantly_file and self.downloader.validate_csv_file(instantly_file):
-                downloaded_files.append(instantly_file)
-                self.logger.info(f"Instantly CSV downloaded successfully: {instantly_file}")
-            else:
-                self.logger.warning("Instantly CSV download failed or validation failed")
-        
+        self.logger.info(f"Downloaded {len(downloaded_files)} CSV files total")
         return downloaded_files
     
     def process_with_openai(self, csv_files: List[str], prompt: str = None, analysis_type: str = "insights") -> List[dict]:
@@ -205,7 +207,7 @@ class CSVProcessingApp:
         
         return overlap_results
     
-    def run_full_pipeline(self, sources: List[str] = None, prompt: str = None, analysis_type: str = "insights") -> dict:
+    def run_full_pipeline(self, sources: List[str] = None, prompt: str = None, analysis_type: str = "insights", days_back: int = 7) -> dict:
         """
         Run the complete pipeline: download CSVs and process with OpenAI
         
@@ -213,6 +215,7 @@ class CSVProcessingApp:
             sources: List of sources to download from
             prompt: Custom prompt for OpenAI processing
             analysis_type: Type of analysis to perform
+            days_back: Number of days to go back for data
             
         Returns:
             Dictionary with pipeline results
@@ -222,7 +225,7 @@ class CSVProcessingApp:
         pipeline_start = datetime.now()
         
         # Step 1: Download CSVs
-        downloaded_files = self.download_csvs(sources)
+        downloaded_files = self.download_csvs(sources, days_back)
         
         if not downloaded_files:
             self.logger.error("No CSV files were downloaded successfully")
@@ -307,6 +310,13 @@ def main():
         help='Process existing CSV files (provide directory path)'
     )
     
+    parser.add_argument(
+        '--days-back',
+        type=int,
+        default=7,
+        help='Number of days to go back for data download (default: 7)'
+    )
+    
     args = parser.parse_args()
     
     # Initialize the application
@@ -327,7 +337,7 @@ def main():
             
         elif args.download_only:
             # Only download CSVs
-            downloaded_files = app.download_csvs(args.sources)
+            downloaded_files = app.download_csvs(args.sources, args.days_back)
             print(f"Downloaded {len(downloaded_files)} CSV files:")
             for file in downloaded_files:
                 print(f"  - {file}")
@@ -341,7 +351,7 @@ def main():
             if args.analysis_type == 'overlaps':
                 # Special handling for overlap analysis
                 print("Running prospect overlap analysis pipeline...")
-                downloaded_files = app.download_csvs(args.sources)
+                downloaded_files = app.download_csvs(args.sources, args.days_back)
                 
                 if not downloaded_files:
                     print("No CSV files were downloaded successfully")
@@ -372,7 +382,7 @@ def main():
                 
             else:
                 # Regular pipeline
-                result = app.run_full_pipeline(args.sources, args.prompt, args.analysis_type)
+                result = app.run_full_pipeline(args.sources, args.prompt, args.analysis_type, args.days_back)
                 
                 if result['success']:
                     print(f"Pipeline completed successfully!")

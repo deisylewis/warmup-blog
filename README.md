@@ -27,38 +27,53 @@ This application automatically downloads CSV files from RB2B (Website visitors),
    # Edit .env with your API keys
    ```
 
-3. **Run the Application**:
+3. **Configure Client APIs** in `.env`:
+   ```env
+   CLIENT1_NAME=your_client_name
+   CLIENT1_INSTANTLY_API_KEY=OWJmMWQ1MGUtOWFhNC00MTg3LWJkYWUtMDYyNDg2MDI4Y2IwOlZvWWZ5VndrYmJ4RA==
+   CLIENT1_INSTANTLY_API_URL=https://api.instantly.ai/v1/exports
+   # Add RB2B and HeyReach APIs for each client...
+   ```
+
+4. **Run the Application**:
    ```bash
-   # Download CSVs and analyze with default insights
+   # Download CSVs and analyze with default insights (last 7 days)
    python main.py
    
-   # Analyze prospect overlaps across all sources
+   # Analyze prospect overlaps across all clients and sources
    python main.py --analysis-type overlaps
    
-   # Download from specific source only
-   python main.py --sources rb2b
+   # Download data for last 30 days
+   python main.py --days-back 30
    
-   # Use custom OpenAI prompt
-   python main.py --analysis-type custom --prompt "Analyze this data for marketing opportunities"
+   # Weekly automated run (Sunday nights at 10 PM)
+   python weekly_scheduler.py
    ```
 
 ## Configuration
 
 ### Environment Variables
 
-Create a `.env` file with your API credentials:
+Create a `.env` file with your client-based API credentials:
 
 ```env
 # Required
 OPENAI_API_KEY=your_openai_api_key_here
 
-# Optional (at least one CSV source is recommended)
-RB2B_API_KEY=your_rb2b_api_key_here
-RB2B_API_URL=https://api.rb2b.com/v1/exports
-HEYREACH_API_KEY=your_heyreach_api_key_here
-HEYREACH_API_URL=https://api.heyreach.io/v1/exports
-INSTANTLY_API_KEY=your_instantly_api_key_here
-INSTANTLY_API_URL=https://api.instantly.ai/v1/exports
+# Client 1 Configuration
+CLIENT1_NAME=client_name_here
+CLIENT1_RB2B_API_KEY=your_rb2b_api_key
+CLIENT1_RB2B_API_URL=https://api.rb2b.com/v1/exports
+CLIENT1_HEYREACH_API_KEY=your_heyreach_api_key
+CLIENT1_HEYREACH_API_URL=https://api.heyreach.io/v1/exports
+CLIENT1_INSTANTLY_API_KEY=OWJmMWQ1MGUtOWFhNC00MTg3LWJkYWUtMDYyNDg2MDI4Y2IwOlZvWWZ5VndrYmJ4RA==
+CLIENT1_INSTANTLY_API_URL=https://api.instantly.ai/v1/exports
+
+# Client 2 Configuration (add as many as needed)
+CLIENT2_NAME=another_client
+CLIENT2_RB2B_API_KEY=...
+CLIENT2_HEYREACH_API_KEY=...
+CLIENT2_INSTANTLY_API_KEY=...
 
 # Optional settings
 DOWNLOAD_DIR=./downloads
@@ -130,14 +145,53 @@ python overlap_analyzer.py --directory ./my-csv-files
 
 The overlap analysis will:
 - **Label each source**: HeyReach = LinkedIn campaigns, RB2B = Website visitors, Instantly = Email campaigns
+- **Tag by client**: Each CSV file is labeled with the client name for easy identification
 - **Find prospect overlaps** by email, company, LinkedIn profile, and other identifiers
 - **Generate detailed reports** showing which prospects appear across multiple channels
 - **Provide OpenAI-powered insights** on multi-channel prospect engagement
 - **Create actionable recommendations** for coordinated marketing campaigns
 
+## 🆕 Key New Features
+
+### 👥 Multi-Client Support
+- **Client Tagging**: Each API group is tagged by client name
+- **Scalable Configuration**: Add unlimited clients with CLIENT1_, CLIENT2_, etc.
+- **Individual Tracking**: CSV files are labeled with client names for easy identification
+
+### 📅 Weekly Automation
+- **Sunday Night Runs**: Automatically downloads last 7 days of data every Sunday at 10 PM
+- **Date Range Filtering**: Configurable date ranges (default: last 7 days)
+- **Comprehensive Logging**: Detailed logs of weekly analysis results
+- **Email Summaries**: Ready for email notification integration
+
+### 🔄 Enhanced Data Processing
+- **7-Day Default**: Optimized for weekly analysis cycles
+- **Client-Specific Filenames**: `{client_name}_{source}_{timestamp}.csv`
+- **Bulk Processing**: Handles multiple clients and sources simultaneously
+
 ## Scheduling
 
-Use the scheduler for automated execution:
+### Weekly Automated Analysis (Recommended)
+
+**NEW**: Automated weekly runs every Sunday night for the last 7 days:
+
+```bash
+# Start weekly scheduler (runs every Sunday at 10 PM)
+python weekly_scheduler.py
+
+# Custom time (e.g., Sunday at 11:30 PM)
+python weekly_scheduler.py --time 23:30
+
+# Run once now and then start weekly schedule
+python weekly_scheduler.py --run-now
+
+# Test run (run once and exit)
+python weekly_scheduler.py --test-run
+```
+
+### Flexible Scheduling
+
+Use the general scheduler for other automated execution patterns:
 
 ```bash
 # Run daily at 9 AM
@@ -148,9 +202,6 @@ python scheduler.py --schedule-type hourly
 
 # Run every 30 minutes
 python scheduler.py --schedule-type interval --interval 30
-
-# Run once immediately, then start daily schedule
-python scheduler.py --schedule-type daily --run-now
 ```
 
 ## File Structure
@@ -162,7 +213,8 @@ python scheduler.py --schedule-type daily --run-now
 ├── openai_processor.py  # OpenAI processing functionality
 ├── prospect_analyzer.py # Prospect overlap analysis engine
 ├── overlap_analyzer.py  # Dedicated overlap analysis script
-├── scheduler.py         # Automated scheduling
+├── scheduler.py         # General automated scheduling
+├── weekly_scheduler.py  # Weekly Sunday night scheduler
 ├── test_installation.py # Installation testing suite
 ├── setup.sh            # Easy installation script
 ├── requirements.txt     # Python dependencies
