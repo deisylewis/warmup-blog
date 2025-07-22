@@ -1,0 +1,4 @@
+2025-07-22 04:04:52,388 - __main__ - INFO - Loaded configuration for client: client1
+2025-07-22 04:04:52,389 - __main__ - INFO - Loaded configuration for client: client2
+2025-07-22 04:04:52,404 - __main__ - INFO - Processing webhook_data/test_client_heyreach_linkedin_campaigns_20250722_040436.csv with OpenAI...
+2025-07-22 04:04:52,404 - __main__ - WARNING - Unknown analysis type or missing prompt: overlaps

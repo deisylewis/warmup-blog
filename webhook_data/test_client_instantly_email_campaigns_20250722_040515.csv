@@ -1,0 +1,5 @@
+email,first_name,last_name,full_name,company,position,campaign_name,campaign_id,status,sent_date,response_date,source,client_name,api_timestamp
+sameer.khan@techcorp.com,Sameer,Khan Mohammed,Sameer Khan Mohammed,TechCorp Inc,Senior DevOps Engineer,Tech Professionals Q1,camp_001,replied,2025-07-20T10:30:00Z,2025-07-20T14:22:00Z,Email campaigns,test_client,2025-07-22T04:05:15.686598
+jason@gomaxone.com,Jason,Mejeur,Jason Mejeur,GoMaxOne,Sales Director,Sales Outreach 2025,camp_002,opened,2025-07-19T09:15:00Z,,Email campaigns,test_client,2025-07-22T04:05:15.686598
+mike.johnson@startup.io,Mike,Johnson,Mike Johnson,Startup.io,CTO,Tech Leaders Campaign,camp_003,bounced,2025-07-18T16:45:00Z,,Email campaigns,test_client,2025-07-22T04:05:15.686598
+sarah.wilson@consulting.com,Sarah,Wilson,Sarah Wilson,Wilson Consulting,Managing Partner,Executive Outreach,camp_004,clicked,2025-07-17T11:20:00Z,,Email campaigns,test_client,2025-07-22T04:05:15.686598
