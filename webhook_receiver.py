@@ -489,16 +489,21 @@ class WebhookReceiver:
 def main():
     """Main function to run the webhook receiver"""
     import argparse
+    import os
     
     parser = argparse.ArgumentParser(description='Webhook Receiver for RB2B and HeyReach')
     parser.add_argument('--host', default='0.0.0.0', help='Host to bind to')
-    parser.add_argument('--port', type=int, default=5000, help='Port to bind to')
+    parser.add_argument('--port', type=int, default=int(os.environ.get('PORT', 5000)), help='Port to bind to')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
     
     args = parser.parse_args()
     
     receiver = WebhookReceiver()
     receiver.run(host=args.host, port=args.port, debug=args.debug)
+
+# Create the app instance for gunicorn
+receiver = WebhookReceiver()
+app = receiver.app
 
 if __name__ == '__main__':
     main()
