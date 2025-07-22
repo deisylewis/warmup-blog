@@ -56,7 +56,9 @@ class Daily6AMScheduler:
                 self.logger.info("📧 Sending email notification to deisy@sendwarmup.com...")
                 
                 # Send detailed email with all prospect information
-                email_sent = self.email_notifier.send_overlap_report(report_data)
+                from email_system import RB2BEmailer
+                emailer = RB2BEmailer()
+                email_sent = emailer.send_detailed_report(report_data)
                 
                 if email_sent:
                     self.logger.info("✅ Email notification sent successfully")
