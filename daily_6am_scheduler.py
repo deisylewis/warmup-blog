@@ -10,7 +10,7 @@ import logging
 import sys
 from datetime import datetime, timedelta
 from rb2b_priority_analyzer import RB2BPriorityAnalyzer
-from email_notifier import EmailNotifier
+# from email_notifier import EmailNotifier  # Using send_real_email.py instead
 import json
 import os
 
@@ -20,7 +20,7 @@ class Daily6AMScheduler:
     def __init__(self):
         self.setup_logging()
         self.analyzer = RB2BPriorityAnalyzer()
-        self.email_notifier = EmailNotifier()
+        # self.email_notifier = EmailNotifier()  # Using send_real_email.py instead
         self.rb2b_sheets_url = "https://docs.google.com/spreadsheets/d/1jPwTgvGwQEG9llkpKgWu8PNYXY-OaUMUvNYGxIWUe0I/edit?gid=0#gid=0"
     
     def setup_logging(self):
@@ -56,9 +56,10 @@ class Daily6AMScheduler:
                 self.logger.info("📧 Sending email notification to deisy@sendwarmup.com...")
                 
                 # Send detailed email with all prospect information
-                from email_system import RB2BEmailer
-                emailer = RB2BEmailer()
-                email_sent = emailer.send_detailed_report(report_data)
+                import subprocess
+                result = subprocess.run([sys.executable, 'send_real_email.py'], 
+                                      capture_output=True, text=True)
+                email_sent = result.returncode == 0
                 
                 if email_sent:
                     self.logger.info("✅ Email notification sent successfully")
