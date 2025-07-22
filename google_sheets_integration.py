@@ -74,8 +74,8 @@ class GoogleSheetsRB2BIntegration:
             csv_url = self.get_csv_url_from_sheets_url(sheets_url)
             self.logger.info(f"CSV export URL: {csv_url}")
             
-            # Download CSV data
-            response = requests.get(csv_url, timeout=30)
+            # Download CSV data (follow redirects)
+            response = requests.get(csv_url, timeout=30, allow_redirects=True)
             response.raise_for_status()
             
             # Parse CSV data
@@ -202,9 +202,9 @@ class GoogleSheetsRB2BIntegration:
         """
         try:
             csv_url = self.get_csv_url_from_sheets_url(sheets_url)
-            response = requests.head(csv_url, timeout=10)
+            response = requests.get(csv_url, timeout=10, allow_redirects=True)
             
-            if response.status_code == 200:
+            if response.status_code == 200 and len(response.text) > 0:
                 self.logger.info("✅ Google Sheets is accessible")
                 return True
             else:

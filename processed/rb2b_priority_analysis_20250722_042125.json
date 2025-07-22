@@ -1,0 +1,465 @@
+{
+  "analysis_timestamp": "2025-07-22T04:21:25.251254",
+  "summary": {
+    "total_rb2b_visitors": 60,
+    "visitors_with_overlaps": 59,
+    "overlap_percentage": 98.33,
+    "high_priority_overlaps": 4,
+    "medium_priority_overlaps": 55,
+    "low_priority_overlaps": 0
+  },
+  "high_priority_prospects": [
+    {
+      "rb2b_visitor": {
+        "company": "Exos",
+        "Business Email": "adavis@teamexos.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/davisangel",
+        "Website": "http://www.teamexos.com2025-01-15T17:08:00.000+00:00",
+        "title": "Board Member | Stanford Board of Governors",
+        "last_name": "Davis",
+        "first_name": "Angel",
+        "Page Visited": "https://coya.life/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:21:25.139849",
+        "name": "Angel Davis"
+      },
+      "rb2b_identifiers": {
+        "company": "exos",
+        "name": "angel davis"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "adavis@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/davisangel",
+            "Website": "http://www.teamexos.com2025-01-15T17:08:00.000+00:00",
+            "title": "Board Member | Stanford Board of Governors",
+            "last_name": "Davis",
+            "first_name": "Angel",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Angel Davis"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/sberchman",
+            "Website": "http://www.teamexos.com2025-01-15T16:34:00.000+00:00",
+            "title": "Vice President, Marketing and Creative Operations",
+            "last_name": "Berchman",
+            "first_name": "Scott",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Scott Berchman"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "owohl@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/orit-wohl",
+            "Website": "http://www.teamexos.com2025-01-15T16:27:00.000+00:00",
+            "title": "Head of Member Growth & Engagement",
+            "last_name": "Wohl",
+            "first_name": "Orit",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Orit Wohl"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "jdruba@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/jaydruba",
+            "Website": "http://www.teamexos.com2025-01-15T18:17:00.000+00:00",
+            "title": "Head of Growth",
+            "last_name": "Druba",
+            "first_name": "Jay",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Jay Druba"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Exos",
+        "Business Email": " ",
+        "Linked In URL ": "https://www.linkedin.com/in/sberchman",
+        "Website": "http://www.teamexos.com2025-01-15T16:34:00.000+00:00",
+        "title": "Vice President, Marketing and Creative Operations",
+        "last_name": "Berchman",
+        "first_name": "Scott",
+        "Page Visited": "https://coya.life/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:21:25.139849",
+        "name": "Scott Berchman"
+      },
+      "rb2b_identifiers": {
+        "company": "exos",
+        "name": "scott berchman"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "adavis@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/davisangel",
+            "Website": "http://www.teamexos.com2025-01-15T17:08:00.000+00:00",
+            "title": "Board Member | Stanford Board of Governors",
+            "last_name": "Davis",
+            "first_name": "Angel",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Angel Davis"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/sberchman",
+            "Website": "http://www.teamexos.com2025-01-15T16:34:00.000+00:00",
+            "title": "Vice President, Marketing and Creative Operations",
+            "last_name": "Berchman",
+            "first_name": "Scott",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Scott Berchman"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "owohl@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/orit-wohl",
+            "Website": "http://www.teamexos.com2025-01-15T16:27:00.000+00:00",
+            "title": "Head of Member Growth & Engagement",
+            "last_name": "Wohl",
+            "first_name": "Orit",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Orit Wohl"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "jdruba@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/jaydruba",
+            "Website": "http://www.teamexos.com2025-01-15T18:17:00.000+00:00",
+            "title": "Head of Growth",
+            "last_name": "Druba",
+            "first_name": "Jay",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Jay Druba"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Exos",
+        "Business Email": "owohl@teamexos.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/orit-wohl",
+        "Website": "http://www.teamexos.com2025-01-15T16:27:00.000+00:00",
+        "title": "Head of Member Growth & Engagement",
+        "last_name": "Wohl",
+        "first_name": "Orit",
+        "Page Visited": "https://coya.life/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:21:25.139849",
+        "name": "Orit Wohl"
+      },
+      "rb2b_identifiers": {
+        "company": "exos",
+        "name": "orit wohl"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "adavis@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/davisangel",
+            "Website": "http://www.teamexos.com2025-01-15T17:08:00.000+00:00",
+            "title": "Board Member | Stanford Board of Governors",
+            "last_name": "Davis",
+            "first_name": "Angel",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Angel Davis"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/sberchman",
+            "Website": "http://www.teamexos.com2025-01-15T16:34:00.000+00:00",
+            "title": "Vice President, Marketing and Creative Operations",
+            "last_name": "Berchman",
+            "first_name": "Scott",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Scott Berchman"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "owohl@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/orit-wohl",
+            "Website": "http://www.teamexos.com2025-01-15T16:27:00.000+00:00",
+            "title": "Head of Member Growth & Engagement",
+            "last_name": "Wohl",
+            "first_name": "Orit",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Orit Wohl"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "jdruba@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/jaydruba",
+            "Website": "http://www.teamexos.com2025-01-15T18:17:00.000+00:00",
+            "title": "Head of Growth",
+            "last_name": "Druba",
+            "first_name": "Jay",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Jay Druba"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Exos",
+        "Business Email": "jdruba@teamexos.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/jaydruba",
+        "Website": "http://www.teamexos.com2025-01-15T18:17:00.000+00:00",
+        "title": "Head of Growth",
+        "last_name": "Druba",
+        "first_name": "Jay",
+        "Page Visited": "https://coya.life/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:21:25.139849",
+        "name": "Jay Druba"
+      },
+      "rb2b_identifiers": {
+        "company": "exos",
+        "name": "jay druba"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "adavis@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/davisangel",
+            "Website": "http://www.teamexos.com2025-01-15T17:08:00.000+00:00",
+            "title": "Board Member | Stanford Board of Governors",
+            "last_name": "Davis",
+            "first_name": "Angel",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Angel Davis"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/sberchman",
+            "Website": "http://www.teamexos.com2025-01-15T16:34:00.000+00:00",
+            "title": "Vice President, Marketing and Creative Operations",
+            "last_name": "Berchman",
+            "first_name": "Scott",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Scott Berchman"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "company"
+          ],
+          "match_confidence": 3,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "owohl@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/orit-wohl",
+            "Website": "http://www.teamexos.com2025-01-15T16:27:00.000+00:00",
+            "title": "Head of Member Growth & Engagement",
+            "last_name": "Wohl",
+            "first_name": "Orit",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Orit Wohl"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Exos",
+            "Business Email": "jdruba@teamexos.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/jaydruba",
+            "Website": "http://www.teamexos.com2025-01-15T18:17:00.000+00:00",
+            "title": "Head of Growth",
+            "last_name": "Druba",
+            "first_name": "Jay",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Jay Druba"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    }
+  ],
+  "recommendations": [
+    "\ud83c\udfaf IMMEDIATE ACTION: 4 high-priority website visitors are also in your outreach campaigns. Coordinate messaging to avoid prospect fatigue.",
+    "\ud83d\udcca REVIEW: 55 medium-priority overlaps may represent the same prospects with different contact information."
+  ]
+}
