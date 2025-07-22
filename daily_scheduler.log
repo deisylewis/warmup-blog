@@ -1,0 +1,54 @@
+2025-07-22 04:46:36,064 - __main__ - INFO - 🧪 Running test analysis now...
+2025-07-22 04:46:36,064 - __main__ - INFO - 🌅 Starting daily 6am RB2B overlap analysis...
+2025-07-22 04:46:36,064 - rb2b_priority_analyzer - INFO - 🎯 Starting RB2B Priority Overlap Analysis...
+2025-07-22 04:46:36,064 - rb2b_priority_analyzer - INFO - 📥 Downloading RB2B website visitor data...
+2025-07-22 04:46:36,064 - google_sheets_integration - INFO - Downloading RB2B data from Google Sheets for client: rb2b_priority
+2025-07-22 04:46:36,064 - google_sheets_integration - INFO - CSV export URL: https://docs.google.com/spreadsheets/d/1jPwTgvGwQEG9llkpKgWu8PNYXY-OaUMUvNYGxIWUe0I/export?format=csv&gid=0
+2025-07-22 04:46:36,509 - google_sheets_integration - INFO - Downloaded 253 rows from Google Sheets
+2025-07-22 04:46:36,514 - google_sheets_integration - INFO - Processed RB2B data: 223 valid records
+2025-07-22 04:46:36,518 - google_sheets_integration - INFO - Saved RB2B data to: webhook_data/rb2b_priority_rb2b_website_visitors_20250722_044636.csv
+2025-07-22 04:46:36,526 - google_sheets_integration - INFO - Data preview:
+                                             company  ...            name
+0         Medical Professional Liability Association  ...  Janis Moriarty
+1  East Bay Asian Local Development Corporation (...  ...  Anne Robertson
+2                           Shapiro Venture Partners  ...   Sarah Shapiro
+3                                 Censible Marketing  ...    Esti Zulberg
+4                               Baker Electric, Inc.  ...      Cory Sloss
+
+[5 rows x 12 columns]
+2025-07-22 04:46:36,529 - rb2b_priority_analyzer - INFO - 📊 Loaded 223 RB2B website visitors
+2025-07-22 04:46:36,530 - rb2b_priority_analyzer - INFO - 📁 Loaded 4 records from Email campaigns: test_client_instantly_email_campaigns_20250722_040515.csv
+2025-07-22 04:46:36,531 - rb2b_priority_analyzer - INFO - 📁 Loaded 59 records from Unknown: rb2b_client_rb2b_website_visitors_20250722_042118.csv
+2025-07-22 04:46:36,535 - rb2b_priority_analyzer - INFO - 📁 Loaded 1 records from LinkedIn campaigns: test_client_heyreach_linkedin_campaigns_20250722_040436.csv
+2025-07-22 04:46:36,536 - rb2b_priority_analyzer - INFO - 📁 Loaded 125 records from Unknown: rb2b_client_rb2b_website_visitors_20250722_043027.csv
+2025-07-22 04:46:37,502 - rb2b_priority_analyzer - INFO - 💾 Saved priority analysis: processed/rb2b_priority_analysis_20250722_044637.json
+2025-07-22 04:46:37,502 - rb2b_priority_analyzer - INFO - ✅ RB2B Priority Analysis Complete!
+2025-07-22 04:46:37,503 - __main__ - INFO - ✅ Analysis completed successfully
+2025-07-22 04:46:37,503 - __main__ - INFO - 📧 Sending email notification to deisy@sendwarmup.com...
+2025-07-22 04:46:37,503 - __main__ - INFO - 📊 DAILY ANALYSIS RESULTS:
+2025-07-22 04:46:37,503 - __main__ - INFO -    • Total RB2B Website Visitors: 223
+2025-07-22 04:46:37,503 - __main__ - INFO -    • Visitors with Overlaps: 127
+2025-07-22 04:46:37,503 - __main__ - INFO -    • Overlap Percentage: 56.95%
+2025-07-22 04:46:37,503 - __main__ - INFO -    • 🚨 HIGH Priority Overlaps: 61
+2025-07-22 04:46:37,503 - __main__ - INFO -    • ⚠️ MEDIUM Priority Overlaps: 66
+2025-07-22 04:46:37,503 - __main__ - INFO - 🚨 HIGH PRIORITY PROSPECTS:
+2025-07-22 04:46:37,503 - __main__ - INFO -    1. Janis Moriarty - Medical Professional Liability Association
+2025-07-22 04:46:37,503 - __main__ - INFO -       📧 jmoriarty@mplassociation.org 
+2025-07-22 04:46:37,503 - __main__ - INFO -       💼 Dental Section Member
+2025-07-22 04:46:37,503 - __main__ - INFO -    2. Anne Robertson - East Bay Asian Local Development Corporation (EBALDC)
+2025-07-22 04:46:37,503 - __main__ - INFO -       📧  
+2025-07-22 04:46:37,503 - __main__ - INFO -       💼 Executive & Board Operations Manager
+2025-07-22 04:46:37,503 - __main__ - INFO -    3. Sarah Shapiro - Shapiro Venture Partners
+2025-07-22 04:46:37,503 - __main__ - INFO -       📧 sarah.shapiro@clorox.com 
+2025-07-22 04:46:37,503 - __main__ - INFO -       💼 Board Member
+2025-07-22 04:46:37,503 - __main__ - INFO -    4. Esti Zulberg - Censible Marketing
+2025-07-22 04:46:37,503 - __main__ - INFO -       📧  
+2025-07-22 04:46:37,503 - __main__ - INFO -       💼 Marketing Liason 
+2025-07-22 04:46:37,503 - __main__ - INFO -    5. Cory Sloss - Baker Electric, Inc.
+2025-07-22 04:46:37,503 - __main__ - INFO -       📧 csloss@bakerelectric.com 
+2025-07-22 04:46:37,503 - __main__ - INFO -       💼 President
+2025-07-22 04:46:37,503 - __main__ - INFO - 💡 RECOMMENDATIONS:
+2025-07-22 04:46:37,503 - __main__ - INFO -    • 🎯 IMMEDIATE ACTION: 61 high-priority website visitors are also in your outreach campaigns. Coordinate messaging to avoid prospect fatigue.
+2025-07-22 04:46:37,503 - __main__ - INFO -    • 📊 REVIEW: 66 medium-priority overlaps may represent the same prospects with different contact information.
+2025-07-22 04:46:37,503 - __main__ - INFO - 💾 Daily summary saved: daily_summaries/summary_20250722.json
+2025-07-22 04:46:37,503 - __main__ - INFO - ✅ Daily analysis and notification complete!
