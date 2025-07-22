@@ -285,21 +285,66 @@ class WebhookReceiver:
             filename = f"{client_name}_heyreach_linkedin_campaigns_{timestamp}.csv"
             filepath = os.path.join(self.webhook_data_dir, filename)
             
-            # Handle different data structures
+            # Parse HeyReach webhook data structure
+            processed_data = []
+            
             if isinstance(data, dict):
-                if 'campaigns' in data:
-                    df = pd.DataFrame(data['campaigns'])
-                elif 'leads' in data:
-                    df = pd.DataFrame(data['leads'])
-                elif 'data' in data:
-                    df = pd.DataFrame(data['data'])
-                else:
-                    df = pd.DataFrame([data])
+                # Extract data from HeyReach webhook format
+                campaign_info = data.get('campaign', {})
+                sender_info = data.get('sender', {})
+                lead_info = data.get('lead', {})
+                
+                # Create a flattened record
+                record = {
+                    # Campaign information
+                    'campaign_name': campaign_info.get('name'),
+                    'campaign_id': campaign_info.get('id'),
+                    'campaign_status': campaign_info.get('status'),
+                    
+                    # Sender information
+                    'sender_id': sender_info.get('id'),
+                    'sender_first_name': sender_info.get('first_name'),
+                    'sender_last_name': sender_info.get('last_name'),
+                    'sender_full_name': sender_info.get('full_name'),
+                    'sender_email': sender_info.get('email_address'),
+                    'sender_profile_url': sender_info.get('profile_url'),
+                    
+                    # Lead/Prospect information
+                    'lead_id': lead_info.get('id'),
+                    'lead_first_name': lead_info.get('first_name'),
+                    'lead_last_name': lead_info.get('last_name'),
+                    'lead_full_name': lead_info.get('full_name'),
+                    'lead_profile_url': lead_info.get('profile_url'),
+                    'lead_location': lead_info.get('location'),
+                    'lead_summary': lead_info.get('summary'),
+                    'lead_company_name': lead_info.get('company_name'),
+                    'lead_company_url': lead_info.get('company_url'),
+                    'lead_position': lead_info.get('position'),
+                    'lead_email': lead_info.get('email_address'),
+                    
+                    # Event information
+                    'event_type': data.get('event_type'),
+                    'timestamp': data.get('timestamp'),
+                    'correlation_id': data.get('correlation_id'),
+                    
+                    # Lists and tags (convert to string)
+                    'lead_lists': str(lead_info.get('lists', [])),
+                    'lead_tags': str(lead_info.get('tags', []))
+                }
+                
+                processed_data.append(record)
+                
             elif isinstance(data, list):
-                df = pd.DataFrame(data)
+                # Handle array of records
+                for item in data:
+                    if isinstance(item, dict):
+                        processed_data.append(self._parse_single_heyreach_record(item))
             else:
                 self.logger.error("Unexpected data format from HeyReach webhook")
                 return None
+            
+            # Create DataFrame
+            df = pd.DataFrame(processed_data)
             
             # Add source and client labels
             df['source'] = 'LinkedIn campaigns'
@@ -315,6 +360,40 @@ class WebhookReceiver:
         except Exception as e:
             self.logger.error(f"Error saving HeyReach data as CSV: {e}")
             return None
+    
+    def _parse_single_heyreach_record(self, data: Dict) -> Dict:
+        """Parse a single HeyReach record"""
+        campaign_info = data.get('campaign', {})
+        sender_info = data.get('sender', {})
+        lead_info = data.get('lead', {})
+        
+        return {
+            'campaign_name': campaign_info.get('name'),
+            'campaign_id': campaign_info.get('id'),
+            'campaign_status': campaign_info.get('status'),
+            'sender_id': sender_info.get('id'),
+            'sender_first_name': sender_info.get('first_name'),
+            'sender_last_name': sender_info.get('last_name'),
+            'sender_full_name': sender_info.get('full_name'),
+            'sender_email': sender_info.get('email_address'),
+            'sender_profile_url': sender_info.get('profile_url'),
+            'lead_id': lead_info.get('id'),
+            'lead_first_name': lead_info.get('first_name'),
+            'lead_last_name': lead_info.get('last_name'),
+            'lead_full_name': lead_info.get('full_name'),
+            'lead_profile_url': lead_info.get('profile_url'),
+            'lead_location': lead_info.get('location'),
+            'lead_summary': lead_info.get('summary'),
+            'lead_company_name': lead_info.get('company_name'),
+            'lead_company_url': lead_info.get('company_url'),
+            'lead_position': lead_info.get('position'),
+            'lead_email': lead_info.get('email_address'),
+            'event_type': data.get('event_type'),
+            'timestamp': data.get('timestamp'),
+            'correlation_id': data.get('correlation_id'),
+            'lead_lists': str(lead_info.get('lists', [])),
+            'lead_tags': str(lead_info.get('tags', []))
+        }
     
     def save_instantly_data_as_csv(self, data: Dict[Any, Any], client_name: str) -> str:
         """Convert Instantly webhook data to CSV format"""
