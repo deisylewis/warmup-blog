@@ -46,3 +46,13 @@
 2025-07-22 04:04:38,178 - main - INFO - Downloaded 0 CSV files total
 2025-07-22 04:04:38,178 - main - ERROR - No CSV files were downloaded successfully
 2025-07-22 04:04:38,178 - __main__ - ERROR - Failed to process webhook data for test_client
+2025-07-22 04:31:47,142 - main - INFO - Loaded configuration for client: client1
+2025-07-22 04:31:47,142 - main - INFO - Loaded configuration for client: client2
+2025-07-22 04:31:47,161 - main - INFO - Loaded configuration for client: client1
+2025-07-22 04:31:47,161 - main - INFO - Loaded configuration for client: client2
+2025-07-22 04:31:47,166 - __main__ - INFO - Starting webhook receiver on 0.0.0.0:5000
+2025-07-22 04:31:47,168 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.30.0.2:5000
+2025-07-22 04:31:47,168 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
