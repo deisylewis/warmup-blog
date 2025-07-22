@@ -55,7 +55,15 @@ class Daily6AMScheduler:
                 # Send email notification
                 self.logger.info("📧 Sending email notification to deisy@sendwarmup.com...")
                 
-                # For now, log the email content (until SMTP is configured)
+                # Send detailed email with all prospect information
+                email_sent = self.email_notifier.send_overlap_report(report_data)
+                
+                if email_sent:
+                    self.logger.info("✅ Email notification sent successfully")
+                else:
+                    self.logger.error("❌ Failed to send email notification")
+                
+                # Also log the results for backup
                 self.log_daily_results(report_data)
                 
                 self.logger.info("✅ Daily analysis and notification complete!")
