@@ -405,6 +405,24 @@ p {
     border: none;
 }
 
+.portfolio-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.portfolio-item:hover .portfolio-img {
+    transform: scale(1.05);
+}
+
 .portfolio-overlay {
     position: absolute;
     top: 0;
@@ -440,15 +458,19 @@ p {
 .portfolio-link {
     color: white;
     text-decoration: none;
-    border: 2px solid white;
+    border: 1px solid white;
     padding: 8px 20px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    border-radius: 0;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .portfolio-link:hover {
     background-color: white;
-    color: #007bff;
+    color: #1a1a1a;
 }
 
 /* Testimonials Section */
@@ -925,4 +947,86 @@ p {
 .section-header {
     opacity: 0;
     animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* LightGallery Custom Styling */
+.lg-custom .lg-backdrop {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+.lg-custom .lg-toolbar {
+    background: none;
+    padding: 20px;
+}
+
+.lg-custom .lg-toolbar .lg-icon {
+    color: white;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0;
+    background: none;
+    transition: all 0.2s ease;
+}
+
+.lg-custom .lg-toolbar .lg-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.lg-custom .lg-sub-html {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.lg-custom .lg-sub-html h4 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.lg-custom .lg-sub-html p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.lg-custom .lg-thumb-outer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+}
+
+.lg-custom .lg-thumb-item {
+    border-radius: 0;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.lg-custom .lg-thumb-item.active,
+.lg-custom .lg-thumb-item:hover {
+    border-color: white;
+}
+
+.lg-custom .lg-counter {
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Custom loading animation */
+.lg-custom .lg-css3.lg-zoom-in .lg-item {
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lg-custom .lg-css3.lg-zoom-in .lg-item.lg-complete {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
 }

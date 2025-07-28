@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Professional Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- LightGallery CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lightgallery.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lg-zoom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/css/lg-thumbnail.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -102,83 +106,101 @@
                 <button class="filter-btn" data-filter="development">Development</button>
             </div>
 
-            <div class="portfolio-grid">
+            <div class="portfolio-grid" id="lightgallery">
                 <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <p>Project Image<br>400x300px</p>
+                    <a href="/images/wedding1.jpg" data-lg-size="1200-800" data-sub-html="<h4>Elegant Wedding Photography</h4><p>Capturing beautiful moments with artistic vision and professional expertise</p>">
+                        <div class="portfolio-image">
+                            <img src="/images/wedding1.jpg" alt="Wedding Photography 1" class="portfolio-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <p>Wedding Image 1<br>1200x800px</p>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h4>Elegant Wedding Photography</h4>
+                                <p>Wedding Photography</p>
+                                <span class="portfolio-link">View Full Size</span>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h4>Project Title 1</h4>
-                            <p>Web Design & Development</p>
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <p>Project Image<br>400x300px</p>
+                    <a href="/images/wedding2.jpg" data-lg-size="1200-800" data-sub-html="<h4>Romantic Portrait Session</h4><p>Intimate couple portraits with natural lighting and emotional depth</p>">
+                        <div class="portfolio-image">
+                            <img src="/images/wedding2.jpg" alt="Wedding Photography 2" class="portfolio-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <p>Wedding Image 2<br>1200x800px</p>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h4>Romantic Portrait Session</h4>
+                                <p>Portrait Photography</p>
+                                <span class="portfolio-link">View Full Size</span>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h4>Project Title 2</h4>
-                            <p>Brand Identity & Strategy</p>
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="portfolio-item" data-category="development">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <p>Project Image<br>400x300px</p>
+                    <a href="/images/wedding3.jpg" data-lg-size="1200-800" data-sub-html="<h4>Ceremony Moments</h4><p>Documenting the sacred moments of your special day with discretion and artistry</p>">
+                        <div class="portfolio-image">
+                            <img src="/images/wedding3.jpg" alt="Wedding Photography 3" class="portfolio-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <p>Wedding Image 3<br>1200x800px</p>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h4>Ceremony Moments</h4>
+                                <p>Wedding Ceremony</p>
+                                <span class="portfolio-link">View Full Size</span>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h4>Project Title 3</h4>
-                            <p>Custom Development</p>
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <p>Project Image<br>400x300px</p>
+                    <a href="/images/wedding4.jpg" data-lg-size="1200-800" data-sub-html="<h4>Reception Celebration</h4><p>Capturing the joy and celebration of your wedding reception</p>">
+                        <div class="portfolio-image">
+                            <img src="/images/wedding4.jpg" alt="Wedding Photography 4" class="portfolio-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <p>Wedding Image 4<br>1200x800px</p>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h4>Reception Celebration</h4>
+                                <p>Reception Photography</p>
+                                <span class="portfolio-link">View Full Size</span>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h4>Project Title 4</h4>
-                            <p>Responsive Website</p>
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <p>Project Image<br>400x300px</p>
+                    <a href="/images/wedding5.jpg" data-lg-size="1200-800" data-sub-html="<h4>Bridal Details</h4><p>Artistic close-ups of wedding details, dress, rings, and decorations</p>">
+                        <div class="portfolio-image">
+                            <img src="/images/wedding5.jpg" alt="Wedding Photography 5" class="portfolio-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <p>Wedding Image 5<br>1200x800px</p>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h4>Bridal Details</h4>
+                                <p>Detail Photography</p>
+                                <span class="portfolio-link">View Full Size</span>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h4>Project Title 5</h4>
-                            <p>Logo & Brand Design</p>
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="portfolio-item" data-category="development">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder">
-                            <p>Project Image<br>400x300px</p>
+                    <a href="/images/wedding6.jpg" data-lg-size="1200-800" data-sub-html="<h4>Golden Hour Portraits</h4><p>Stunning couple portraits during the magical golden hour</p>">
+                        <div class="portfolio-image">
+                            <img src="/images/wedding6.jpg" alt="Wedding Photography 6" class="portfolio-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="image-placeholder" style="display: none;">
+                                <p>Wedding Image 6<br>1200x800px</p>
+                            </div>
+                            <div class="portfolio-overlay">
+                                <h4>Golden Hour Portraits</h4>
+                                <p>Couple Photography</p>
+                                <span class="portfolio-link">View Full Size</span>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h4>Project Title 6</h4>
-                            <p>E-commerce Platform</p>
-                            <a href="#" class="portfolio-link">View Project</a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -384,6 +406,10 @@
         </div>
     </footer>
 
+    <!-- LightGallery JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

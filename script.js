@@ -27,7 +27,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Portfolio Filtering
+// LightGallery Initialization
+document.addEventListener('DOMContentLoaded', function() {
+    const lightGalleryElement = document.getElementById('lightgallery');
+    
+    if (lightGalleryElement && typeof lightGallery !== 'undefined') {
+        const gallery = lightGallery(lightGalleryElement, {
+            plugins: [lgZoom, lgThumbnail],
+            speed: 500,
+            thumbnail: true,
+            animateThumb: true,
+            zoomFromOrigin: false,
+            allowMediaOverlap: true,
+            toggleThumb: true,
+            thumbWidth: 100,
+            thumbHeight: 80,
+            thumbMargin: 5,
+            appendSubHtmlTo: '.lg-sub-html',
+            subHtmlSelectorRelative: true,
+            getCaptionFromTitleOrAlt: false,
+            // Custom settings for better UX
+            download: false,
+            counter: true,
+            closable: true,
+            swipeToClose: true,
+            addClass: 'lg-custom'
+        });
+        
+        // Store gallery instance for filtering
+        window.portfolioGallery = gallery;
+    }
+});
+
+// Portfolio Filtering with LightGallery support
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
@@ -54,6 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
+
+            // Refresh LightGallery after filtering
+            if (window.portfolioGallery) {
+                window.portfolioGallery.refresh();
+            }
         });
     });
 });
