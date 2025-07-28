@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD Photos - Wedding Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: #000;
+            border-color: #000;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #000;
+            border-color: #000;
+        }
+
+        .btn-secondary:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #666;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(45deg, #f8f8f8 50%, #fff 50%);
+        }
+
+        .hero-content {
+            flex: 1;
+            padding: 2rem;
+            z-index: 2;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #000;
+            font-style: italic;
+        }
+
+        .about-description {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 0;
+        }
+
+        /* Testimonial Section */
+        .testimonial {
+            padding: 4rem 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            line-height: 1.6;
+            color: #000;
+        }
+
+        .testimonial-author {
+            font-size: 1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .service-item {
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-item:hover {
+            background-color: #fafafa;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .service-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .service-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .service-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-details li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-details li:before {
+            content: "•";
+            color: #000;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background-color: #f8f8f8;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 6rem 0;
+            background-color: #fff;
+        }
+
+        .packages-subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .package-card {
+            background-color: #f8f8f8;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .package-card.featured {
+            background-color: #000;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .package-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .package-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .package-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .package-card.featured .package-features li {
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        .add-ons {
+            margin-top: 4rem;
+        }
+
+        .add-ons-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .add-ons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .add-on-item {
+            background-color: #f8f8f8;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .add-on-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .add-on-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+            margin: 0.5rem 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background-color: #f8f8f8;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .contact-item i {
+            margin-right: 1rem;
+            color: #000;
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: #666;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #000;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            color: #fff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo p {
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #ccc;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #fff;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                height: 50vh;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .package-card.featured {
+                transform: none;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+
+            .testimonial-quote {
+                font-size: 1.2rem;
+            }
+
+            .package-price {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Additional styling */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">DnD Photos</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#packages" class="nav-link">Packages</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">WEDDINGS, ENGAGEMENTS, PORTRAITS</h1>
+                <p class="hero-subtitle">Capturing authentic moments with artful intention and purpose</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Learn More</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Do This!</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Wedding Photography" />
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">HEY, WE'RE DnD PHOTOS.</h2>
+                    <h3 class="about-subtitle">Just photographers romanticizing life through creative, intuitive and emotive photos.</h3>
+                    <p class="about-description">
+                        Hey there! We're a husband and wife photography team with a passion for capturing authentic moments. 
+                        We've been photographing weddings for over 10 years and have captured hundreds of love stories. 
+                        Our approach to photography is visual storytelling, a mix of candid and editorial, with a style that 
+                        is vibrant and bold. We will help you bring your vision to life with style, creativity, and a 
+                        commitment to telling your story, thoughtfully and intentionally.
+                    </p>
+                    <p class="about-description">
+                        To us, your gallery of photos is art... a curated body of work that celebrates your unique love story.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About DnD Photos" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="container">
+            <blockquote class="testimonial-quote">
+                "DND PHOTOS WAS ONE OF THE BEST INVESTMENTS WE MADE AT OUR WEDDING. LITTLE DID WE KNOW WHAT TALENT WE WERE DEALING WITH. THEY NOT ONLY WERE GREAT ON THE WEDDING DAY BUT REALLY FLEXIBLE AND ACCOMMODATING UP TIL THE WEDDING DAY...THANK YOU!"
+            </blockquote>
+            <cite class="testimonial-author">- Sarah & Michael</cite>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">SERVICES</h2>
+            
+            <div class="service-item">
+                <div class="service-content">
+                    <h3 class="service-title">WEDDINGS</h3>
+                    <p class="service-description">
+                        Collections for everything you need, and nothing you don't. We value transparency, 
+                        and we hope you do too. Wedding Collections include professional photography, 
+                        custom photo timeline, online gallery with digital download, and high-resolution files. 
+                        Wedding Collections start at $3,500. A contract and retainer is required to book your date.
+                    </p>
+                    <div class="service-details">
+                        <p><strong>What's Included:</strong></p>
+                        <ul>
+                            <li>Two experienced photographers</li>
+                            <li>8-14 hours of wedding day coverage</li>
+                            <li>Full re-print rights</li>
+                            <li>High-resolution files of ALL images</li>
+                            <li>Online gallery with digital download</li>
+                            <li>Custom photo timeline</li>
+                            <li>4 week delivery or less</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-content">
+                    <h3 class="service-title">ENGAGEMENTS</h3>
+                    <p class="service-description">
+                        In your engaged era! Engagement portrait sessions with a quick turnaround. 
+                        This session is $750, 60 minutes, and includes 50+ edited photos. 
+                        The turnaround for gallery delivery is 2 weeks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-content">
+                    <h3 class="service-title">PORTRAITS</h3>
+                    <p class="service-description">
+                        Family, maternity, and senior portrait sessions are all tailored to your needs. 
+                        On average, our customers spend about $600, including the portrait session and prints. 
+                        Sessions include high-quality images and personalized service.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">THE PORTFOLIO</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Photography" />
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Photography" />
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Photography" />
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Photography" />
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Photography" />
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Photography" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages">
+        <div class="container">
+            <h2 class="section-title">WEDDING PACKAGES</h2>
+            <p class="packages-subtitle">10% Discounts for Friday, Sunday and Winter Weddings</p>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <h3 class="package-title">Collection One</h3>
+                    <div class="package-price">$7,500</div>
+                    <ul class="package-features">
+                        <li>Two Photographers</li>
+                        <li>10 Hours of Coverage</li>
+                        <li>700+ Edited Photos</li>
+                        <li>Online Gallery</li>
+                        <li>Full Resolution Downloads</li>
+                        <li>Print Release</li>
+                    </ul>
+                </div>
+
+                <div class="package-card featured">
+                    <h3 class="package-title">Collection Two</h3>
+                    <div class="package-price">$5,500</div>
+                    <ul class="package-features">
+                        <li>Two Photographers</li>
+                        <li>8 Hours of Coverage</li>
+                        <li>500+ Edited Photos</li>
+                        <li>Online Gallery</li>
+                        <li>Full Resolution Downloads</li>
+                        <li>Print Release</li>
+                    </ul>
+                </div>
+
+                <div class="package-card">
+                    <h3 class="package-title">Collection Three</h3>
+                    <div class="package-price">$3,500</div>
+                    <ul class="package-features">
+                        <li>One Photographer</li>
+                        <li>6 Hours of Coverage</li>
+                        <li>300+ Edited Photos</li>
+                        <li>Online Gallery</li>
+                        <li>Full Resolution Downloads</li>
+                        <li>Print Release</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="add-ons">
+                <h3 class="add-ons-title">Add-On Services</h3>
+                <div class="add-ons-grid">
+                    <div class="add-on-item">
+                        <h4>Engagement Session</h4>
+                        <p class="add-on-price">$750</p>
+                        <p>60 minutes, 50+ edited photos</p>
+                    </div>
+                    <div class="add-on-item">
+                        <h4>Additional Hour</h4>
+                        <p class="add-on-price">$350</p>
+                        <p>Extend your coverage</p>
+                    </div>
+                    <div class="add-on-item">
+                        <h4>Second Shooter</h4>
+                        <p class="add-on-price">$500</p>
+                        <p>Additional photographer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">LET'S CHAT</h2>
+                    <p class="contact-description">
+                        I believe that the best memories are made when we're comfortable with each other, 
+                        so I'm here to guide you through a smooth, relaxed, and organized experience.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@dndphotos.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(612) 758-0818</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Minneapolis, Minnesota & Worldwide</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="wedding-date" placeholder="Wedding Date">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="venue" placeholder="Wedding Venue">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Tell us about your wedding day vision..." rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>DnD Photos</h3>
+                    <p>Minneapolis Wedding Photography</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#packages">Packages</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DnD Photos. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scrollToTop">↑</button>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Contact form handling
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const formObject = {};
+                formData.forEach((value, key) => {
+                    formObject[key] = value;
+                });
+                
+                // Simple form validation
+                const requiredFields = ['name', 'email'];
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    const input = this.querySelector(`[name="${field}"]`);
+                    if (!formObject[field] || formObject[field].trim() === '') {
+                        input.style.borderColor = '#ff0000';
+                        isValid = false;
+                    } else {
+                        input.style.borderColor = '#ddd';
+                    }
+                });
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const emailInput = this.querySelector('[name="email"]');
+                if (formObject.email && !emailRegex.test(formObject.email)) {
+                    emailInput.style.borderColor = '#ff0000';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    alert('Thank you for your message! We\'ll get back to you soon.');
+                    this.reset();
+                } else {
+                    alert('Please fill in all required fields correctly.');
+                }
+            });
+        }
+
+        // Portfolio image lightbox effect
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    // Simple lightbox - open image in new tab
+                    window.open(img.src, '_blank');
+                }
+            });
+        });
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add fade-in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-item, .portfolio-item, .package-card, .about-content, .testimonial').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelector('.hero-text').classList.add('fade-in');
+            }, 300);
+        });
+    </script>
+</body>
+</html>
