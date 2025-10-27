@@ -1,0 +1,16 @@
+{
+  "date": "2025-07-22T04:46:37.503637",
+  "summary": {
+    "total_rb2b_visitors": 223,
+    "visitors_with_overlaps": 127,
+    "overlap_percentage": 56.95,
+    "high_priority_overlaps": 61,
+    "medium_priority_overlaps": 66,
+    "low_priority_overlaps": 0
+  },
+  "high_priority_count": 10,
+  "recommendations": [
+    "\ud83c\udfaf IMMEDIATE ACTION: 61 high-priority website visitors are also in your outreach campaigns. Coordinate messaging to avoid prospect fatigue.",
+    "\ud83d\udcca REVIEW: 66 medium-priority overlaps may represent the same prospects with different contact information."
+  ]
+}

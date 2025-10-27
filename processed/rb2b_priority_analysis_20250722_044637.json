@@ -1,0 +1,707 @@
+{
+  "analysis_timestamp": "2025-07-22T04:46:37.501873",
+  "summary": {
+    "total_rb2b_visitors": 223,
+    "visitors_with_overlaps": 127,
+    "overlap_percentage": 56.95,
+    "high_priority_overlaps": 61,
+    "medium_priority_overlaps": 66,
+    "low_priority_overlaps": 0
+  },
+  "high_priority_prospects": [
+    {
+      "rb2b_visitor": {
+        "company": "Medical Professional Liability Association",
+        "Business Email": "jmoriarty@mplassociation.org ",
+        "Linked In URL ": "https://www.linkedin.com/in/janismoriartydmd",
+        "Website": "http://www.MPLassociation.org2025-01-19T14:45:00.000+00:00",
+        "title": "Dental Section Member",
+        "last_name": "Moriarty",
+        "first_name": "Janis",
+        "Page Visited": "https://coya.life/new-year-2025/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Janis Moriarty"
+      },
+      "rb2b_identifiers": {
+        "company": "medical professional liability association",
+        "name": "janis moriarty"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Medical Professional Liability Association",
+            "Business Email": "jmoriarty@mplassociation.org ",
+            "Linked In URL ": "https://www.linkedin.com/in/janismoriartydmd",
+            "Website": "http://www.MPLassociation.org2025-01-19T14:45:00.000+00:00",
+            "title": "Dental Section Member",
+            "last_name": "Moriarty",
+            "first_name": "Janis",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Janis Moriarty"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Medical Professional Liability Association",
+            "Business Email": "jmoriarty@mplassociation.org ",
+            "Linked In URL ": "https://www.linkedin.com/in/janismoriartydmd",
+            "Website": "http://www.MPLassociation.org2025-01-19T14:45:00.000+00:00",
+            "title": "Dental Section Member",
+            "last_name": "Moriarty",
+            "first_name": "Janis",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Janis Moriarty"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "East Bay Asian Local Development Corporation (EBALDC)",
+        "Business Email": " ",
+        "Linked In URL ": "https://www.linkedin.com/in/annerobertson67",
+        "Website": "http://www.ebaldc.org2025-01-19T07:45:00.000+00:00",
+        "title": "Executive & Board Operations Manager",
+        "last_name": "Robertson",
+        "first_name": "Anne",
+        "Page Visited": "https://coya.life/new-year-2025/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Anne Robertson"
+      },
+      "rb2b_identifiers": {
+        "company": "east bay asian local development corporation (ebaldc)",
+        "name": "anne robertson"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "East Bay Asian Local Development Corporation (EBALDC)",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/annerobertson67",
+            "Website": "http://www.ebaldc.org2025-01-19T07:45:00.000+00:00",
+            "title": "Executive & Board Operations Manager",
+            "last_name": "Robertson",
+            "first_name": "Anne",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Anne Robertson"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "East Bay Asian Local Development Corporation (EBALDC)",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/annerobertson67",
+            "Website": "http://www.ebaldc.org2025-01-19T07:45:00.000+00:00",
+            "title": "Executive & Board Operations Manager",
+            "last_name": "Robertson",
+            "first_name": "Anne",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Anne Robertson"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Shapiro Venture Partners",
+        "Business Email": "sarah.shapiro@clorox.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/sarahshapiro",
+        "Website": "2025-01-19T14:32:00.000+00:00",
+        "title": "Board Member",
+        "last_name": "Shapiro",
+        "first_name": "Sarah",
+        "Page Visited": "https://coya.life/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Sarah Shapiro"
+      },
+      "rb2b_identifiers": {
+        "company": "shapiro venture partners",
+        "name": "sarah shapiro"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Shapiro Venture Partners",
+            "Business Email": "sarah.shapiro@clorox.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/sarahshapiro",
+            "Website": "2025-01-19T14:32:00.000+00:00",
+            "title": "Board Member",
+            "last_name": "Shapiro",
+            "first_name": "Sarah",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Sarah Shapiro"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Shapiro Venture Partners",
+            "Business Email": "sarah.shapiro@clorox.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/sarahshapiro",
+            "Website": "2025-01-19T14:32:00.000+00:00",
+            "title": "Board Member",
+            "last_name": "Shapiro",
+            "first_name": "Sarah",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Sarah Shapiro"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Censible Marketing",
+        "Business Email": " ",
+        "Linked In URL ": "https://www.linkedin.com/in/esti-zulberg-59a90a17a",
+        "Website": "http://censiblemarketing.com2025-01-19T13:26:00.000+00:00",
+        "title": "Marketing Liason ",
+        "last_name": "Zulberg",
+        "first_name": "Esti",
+        "Page Visited": "https://coya.life/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Esti Zulberg"
+      },
+      "rb2b_identifiers": {
+        "company": "censible marketing",
+        "name": "esti zulberg"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Censible Marketing",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/esti-zulberg-59a90a17a",
+            "Website": "http://censiblemarketing.com2025-01-19T13:26:00.000+00:00",
+            "title": "Marketing Liason ",
+            "last_name": "Zulberg",
+            "first_name": "Esti",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Esti Zulberg"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Censible Marketing",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/esti-zulberg-59a90a17a",
+            "Website": "http://censiblemarketing.com2025-01-19T13:26:00.000+00:00",
+            "title": "Marketing Liason ",
+            "last_name": "Zulberg",
+            "first_name": "Esti",
+            "Page Visited": "https://coya.life/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Esti Zulberg"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Baker Electric, Inc.",
+        "Business Email": "csloss@bakerelectric.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/cory-sloss-3490897b",
+        "Website": "http://www.bakerelectric.com2025-01-19T10:32:00.000+00:00",
+        "title": "President",
+        "last_name": "Sloss",
+        "first_name": "Cory",
+        "Page Visited": "https://coya.life/new-year-2025/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Cory Sloss"
+      },
+      "rb2b_identifiers": {
+        "company": "baker electric, inc.",
+        "name": "cory sloss"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Baker Electric, Inc.",
+            "Business Email": "csloss@bakerelectric.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/cory-sloss-3490897b",
+            "Website": "http://www.bakerelectric.com2025-01-19T10:32:00.000+00:00",
+            "title": "President",
+            "last_name": "Sloss",
+            "first_name": "Cory",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Cory Sloss"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Baker Electric, Inc.",
+            "Business Email": "csloss@bakerelectric.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/cory-sloss-3490897b",
+            "Website": "http://www.bakerelectric.com2025-01-19T10:32:00.000+00:00",
+            "title": "President",
+            "last_name": "Sloss",
+            "first_name": "Cory",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Cory Sloss"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "UMass Memorial HealthAlliance-Clinton Hospital",
+        "Business Email": "smuller@healthalliance.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/susej-muller-aa358811a",
+        "Website": "https://www.ummhealth.org/healthalliance-clinton-hospital2025-01-19T14:07:00.000+00:00",
+        "title": "CCT",
+        "last_name": "Muller",
+        "first_name": "Susej",
+        "Page Visited": "https://coya.life/new-year-2025/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Susej Muller"
+      },
+      "rb2b_identifiers": {
+        "company": "umass memorial healthalliance-clinton hospital",
+        "name": "susej muller"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "UMass Memorial HealthAlliance-Clinton Hospital",
+            "Business Email": "smuller@healthalliance.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/susej-muller-aa358811a",
+            "Website": "https://www.ummhealth.org/healthalliance-clinton-hospital2025-01-19T14:07:00.000+00:00",
+            "title": "CCT",
+            "last_name": "Muller",
+            "first_name": "Susej",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Susej Muller"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "UMass Memorial HealthAlliance-Clinton Hospital",
+            "Business Email": "smuller@healthalliance.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/susej-muller-aa358811a",
+            "Website": "https://www.ummhealth.org/healthalliance-clinton-hospital2025-01-19T14:07:00.000+00:00",
+            "title": "CCT",
+            "last_name": "Muller",
+            "first_name": "Susej",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Susej Muller"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Prairie Community Services",
+        "Business Email": " ",
+        "Linked In URL ": "https://www.linkedin.com/in/amanda-miller-085ab3150",
+        "Website": "2025-01-19T07:47:00.000+00:00",
+        "title": "LPN",
+        "last_name": "Miller",
+        "first_name": "Amanda",
+        "Page Visited": "https://coya.life/new-year-2025/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Amanda Miller"
+      },
+      "rb2b_identifiers": {
+        "company": "prairie community services",
+        "name": "amanda miller"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Prairie Community Services",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/amanda-miller-085ab3150",
+            "Website": "2025-01-19T07:47:00.000+00:00",
+            "title": "LPN",
+            "last_name": "Miller",
+            "first_name": "Amanda",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Amanda Miller"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Prairie Community Services",
+            "Business Email": " ",
+            "Linked In URL ": "https://www.linkedin.com/in/amanda-miller-085ab3150",
+            "Website": "2025-01-19T07:47:00.000+00:00",
+            "title": "LPN",
+            "last_name": "Miller",
+            "first_name": "Amanda",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Amanda Miller"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Ascend Technologies",
+        "Business Email": "esanchez@teamascend.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/edwin-sanchez-7a8bb219",
+        "Website": "https://teamascend.com2025-01-19T09:53:00.000+00:00",
+        "title": "Sr. IT Operations Analyst",
+        "last_name": "Sanchez",
+        "first_name": "Edwin",
+        "Page Visited": "https://coya.life/new-year-2025/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Edwin Sanchez"
+      },
+      "rb2b_identifiers": {
+        "company": "ascend technologies",
+        "name": "edwin sanchez"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Ascend Technologies",
+            "Business Email": "esanchez@teamascend.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/edwin-sanchez-7a8bb219",
+            "Website": "https://teamascend.com2025-01-19T09:53:00.000+00:00",
+            "title": "Sr. IT Operations Analyst",
+            "last_name": "Sanchez",
+            "first_name": "Edwin",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Edwin Sanchez"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Ascend Technologies",
+            "Business Email": "esanchez@teamascend.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/edwin-sanchez-7a8bb219",
+            "Website": "https://teamascend.com2025-01-19T09:53:00.000+00:00",
+            "title": "Sr. IT Operations Analyst",
+            "last_name": "Sanchez",
+            "first_name": "Edwin",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Edwin Sanchez"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "City of East Lansing",
+        "Business Email": "jdrwencke@cityofeastlansing.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/justin-drwencke-3b112721",
+        "Website": "http://www.cityofeastlansing.com2025-01-19T10:30:00.000+00:00",
+        "title": "Event Coordinator & Grant Administrator",
+        "last_name": "Drwencke",
+        "first_name": "Justin",
+        "Page Visited": "https://coya.life/new-year-2025/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Justin Drwencke"
+      },
+      "rb2b_identifiers": {
+        "company": "city of east lansing",
+        "name": "justin drwencke"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "City of East Lansing",
+            "Business Email": "jdrwencke@cityofeastlansing.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/justin-drwencke-3b112721",
+            "Website": "http://www.cityofeastlansing.com2025-01-19T10:30:00.000+00:00",
+            "title": "Event Coordinator & Grant Administrator",
+            "last_name": "Drwencke",
+            "first_name": "Justin",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Justin Drwencke"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "City of East Lansing",
+            "Business Email": "jdrwencke@cityofeastlansing.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/justin-drwencke-3b112721",
+            "Website": "http://www.cityofeastlansing.com2025-01-19T10:30:00.000+00:00",
+            "title": "Event Coordinator & Grant Administrator",
+            "last_name": "Drwencke",
+            "first_name": "Justin",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Justin Drwencke"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "rb2b_visitor": {
+        "company": "Rosen Neuberger Lehmann LLP",
+        "Business Email": "mneuberger@abrneu.com ",
+        "Linked In URL ": "https://www.linkedin.com/in/meir-neuberger-74864a9b",
+        "Website": "http://www.RosenNeuberger.com2025-01-19T07:55:00.000+00:00",
+        "title": "Attorney",
+        "last_name": "Neuberger",
+        "first_name": "Meir",
+        "Page Visited": "https://coya.life/new-year-2025/",
+        "source": "Website visitors",
+        "client_name": "rb2b_priority",
+        "sheets_timestamp": "2025-07-22T04:46:36.511229",
+        "name": "Meir Neuberger"
+      },
+      "rb2b_identifiers": {
+        "company": "rosen neuberger lehmann llp",
+        "name": "meir neuberger"
+      },
+      "matches": [
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_042118.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Rosen Neuberger Lehmann LLP",
+            "Business Email": "mneuberger@abrneu.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/meir-neuberger-74864a9b",
+            "Website": "http://www.RosenNeuberger.com2025-01-19T07:55:00.000+00:00",
+            "title": "Attorney",
+            "last_name": "Neuberger",
+            "first_name": "Meir",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:21:18.408328",
+            "name": "Meir Neuberger"
+          }
+        },
+        {
+          "source_type": "Unknown",
+          "source_filename": "rb2b_client_rb2b_website_visitors_20250722_043027.csv",
+          "match_types": [
+            "name",
+            "company"
+          ],
+          "match_confidence": 8,
+          "matched_record": {
+            "company": "Rosen Neuberger Lehmann LLP",
+            "Business Email": "mneuberger@abrneu.com ",
+            "Linked In URL ": "https://www.linkedin.com/in/meir-neuberger-74864a9b",
+            "Website": "http://www.RosenNeuberger.com2025-01-19T07:55:00.000+00:00",
+            "title": "Attorney",
+            "last_name": "Neuberger",
+            "first_name": "Meir",
+            "Page Visited": "https://coya.life/new-year-2025/",
+            "source": "Website visitors",
+            "client_name": "rb2b_client",
+            "sheets_timestamp": "2025-07-22T04:30:27.043771",
+            "name": "Meir Neuberger"
+          }
+        }
+      ],
+      "priority": "HIGH"
+    }
+  ],
+  "recommendations": [
+    "\ud83c\udfaf IMMEDIATE ACTION: 61 high-priority website visitors are also in your outreach campaigns. Coordinate messaging to avoid prospect fatigue.",
+    "\ud83d\udcca REVIEW: 66 medium-priority overlaps may represent the same prospects with different contact information."
+  ]
+}
